@@ -2,7 +2,6 @@ package rubychina
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strconv"
@@ -145,14 +144,13 @@ func GetTopicByID(id uint32) (topic Topic, err error) {
 // https: //ruby-china.org/api/users/no13bus/topics/favorite.json
 func GetFavoriteTopic(username string) (topics Topics, err error) {
 	url := ruby_chinaAPI + "users/" + username + "/topics/favorite.json"
-	err = GetJsonData(url, topics)
+	err = GetJsonData(url, &topics)
 	return
 }
 
 // 取得sites的信息
 func GetSites() (sites AllSites, err error) {
 	url := ruby_chinaAPI + "sites.json"
-	fmt.Println(url)
 	err = GetJsonData(url, &sites)
 	return
 

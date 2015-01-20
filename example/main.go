@@ -29,7 +29,7 @@ func main() {
 	}
 	topic, err := rubychina.GetTopicByID(1)
 	sites, err := rubychina.GetSites()
-	fa_topics, err := GetFavoriteTopic("no13bus")
+	fa_topics, err := rubychina.GetFavoriteTopic("no13bus")
 
 	fmt.Println(nodes[0].Name)
 	fmt.Println(topics[0].Title)
@@ -38,8 +38,7 @@ func main() {
 	fmt.Println(topic.Title)
 	fmt.Println(topic.Replies[0].Body)
 	fmt.Println(sites[0].Sites[0].Desc)
-	if len(fa_topics) > 1 {
-		fmt.Println(fa_topics[0].Title)
-	}
+	// fmt.Println(len(fa_topics))
+	fmt.Println(fa_topics)
 
 }
