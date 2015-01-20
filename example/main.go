@@ -38,7 +38,8 @@ func main() {
 	fmt.Println(topic.Title)
 	fmt.Println(topic.Replies[0].Body)
 	fmt.Println(sites[0].Sites[0].Desc)
-	// fmt.Println(len(fa_topics))
-	fmt.Println(fa_topics)
+	if len(fa_topics) > 0 {
+		fmt.Println(fa_topics[0].Title)
+	}
 
 }
