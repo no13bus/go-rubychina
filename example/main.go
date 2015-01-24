@@ -3,43 +3,44 @@ package main
 import (
 	"fmt"
 	"github.com/no13bus/go-rubychina"
+	"log"
 )
 
 func main() {
 	// var nodes Nodes
 	nodes, err := rubychina.GetNodes()
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 		return
 	}
 	topics, err := rubychina.GetTopics()
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 		return
 	}
 	users, err := rubychina.GetUsers()
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 		return
 	}
 	user, err := rubychina.GetUserByName("no13bus")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 		return
 	}
 	topic, err := rubychina.GetTopicByID(1)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 		return
 	}
 	sites, err := rubychina.GetSites()
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 		return
 	}
 	fa_topics, err := rubychina.GetFavoriteTopic("no13bus")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 		return
 	}
 
